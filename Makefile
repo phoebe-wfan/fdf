@@ -20,26 +20,26 @@ INCLUDES 	= ./includes
 SRCDIR 		= ./srcs/
 
 SRC 		= $(SRCDIR)main.c \
-				# $(SRCDIR)close.c \
-				# $(SRCDIR)color.c \
-				# $(SRCDIR)draw.c \
-				# $(SRCDIR)error.c \
-				# $(SRCDIR)init_utils.c \
-				# $(SRCDIR)init.c \
-				# $(SRCDIR)key_handle.c \
-				# $(SRCDIR)menu.c \
-				# $(SRCDIR)project.c \
-				# $(SRCDIR)read.c \
-				# $(SRCDIR)render.c \
-				# $(SRCDIR)rotate.c \
-				# $(SRCDIR)transform.c \
-				# $(SRCDIR)utils.c
+				$(SRCDIR)close.c \
+				$(SRCDIR)color.c \
+				$(SRCDIR)draw.c \
+				$(SRCDIR)error.c \
+				$(SRCDIR)init_utils.c \
+				$(SRCDIR)init.c \
+				$(SRCDIR)key_handle.c \
+				$(SRCDIR)menu.c \
+				$(SRCDIR)project.c \
+				$(SRCDIR)read.c \
+				$(SRCDIR)render.c \
+				$(SRCDIR)rotate.c \
+				$(SRCDIR)transform.c \
+				$(SRCDIR)utils.c
 
 OBJ=$(notdir $(SRC:.c=.o))
 #OBJ= fdf.o
 
 #compilation
-#CF 			= -Wall -Wextra -Werror
+CF 			= -Wall -Wextra -Werror
 CC 			= gcc
 MLX_CF 		= -lm -lbsd -lmlx -lXext -lX11
 CFI 		= -I$(INCLUDES) -Ilibft -Iminilibx-linux

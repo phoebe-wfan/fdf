@@ -54,11 +54,11 @@ t_color *color_init(t_point start, t_point end)
 
 	color = malloc(sizeof(t_color));
 	if(!color)
-		retuen(NULL);
+		return(NULL);
 	color->start_color = start.color;
-	color->start_r = (c_RED & start.color) >> 16;
-	color->start_g = (c_GREEN & start.color) >> 8;
-	color->start_b = (c_BLUE & start.color);
+	color->start_r = (C_RED & start.color) >> 16;
+	color->start_g = (C_GREEN & start.color) >> 8;
+	color->start_b = (C_BLUE & start.color);
 	color->end_color = end.color;
 	color->end_r = (C_RED & end.color) >> 16;
 	color->end_g = (C_GREEN & end.color) >> 8;

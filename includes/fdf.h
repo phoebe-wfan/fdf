@@ -14,6 +14,7 @@
 # define FDF_H
 
 # include "libft.h"
+# include "../get_next_line/get_next_line.h"
 # include "mlx.h"
 # include "keys.h"
 # include "colors.h"
@@ -96,7 +97,7 @@ typedef struct s_fdf
 # define WINDOW_NAME	"fdf"
 # define WINDOW_WIDTH	1200
 # define WINDOW_HEIGHT	900
-# define WINDOW_PIXEL	1080000
+# define MAX_PIXEL		1080000
 # define LINE_DEFAULT		C_WHITE
 # define BACKGROUND_DEFAULT	C_GREY
 # define C_TEXT				C_WHITE
@@ -159,5 +160,9 @@ void	scale(t_line *line, int scale_factor);
 void	translate(t_line *line, int move_x, int move_y);
 
 int		key_handle(int keycode, t_fdf *fdf);
+size_t	ft_split_count(const char *s, char c);
+int	ft_atoi_base(char *str, char *base);
+int	ft_convert_from_base(char *str, char *base);
+int	ft_check_base_error(char *str);
 
 #endif

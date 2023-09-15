@@ -16,7 +16,7 @@ static void	close_coordinates(t_point **coorfinates, int width);
 
 void	close_all(t_fdf	*fdf, int exit_code)
 {
-	close_coordinares(fdf->map->coordinates, fdf->map->max_x);
+	close_coordinates(fdf->map->coordinates, fdf->map->max_x);
 	free(fdf->map);
 	mlx_destroy_image(fdf->mlx, fdf->image->image);
 	free(fdf->image);
