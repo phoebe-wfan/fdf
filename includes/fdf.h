@@ -14,7 +14,6 @@
 # define FDF_H
 
 # include "libft.h"
-# include "../get_next_line/get_next_line.h"
 # include "mlx.h"
 # include "keys.h"
 # include "colors.h"
@@ -164,5 +163,7 @@ size_t	ft_split_count(const char *s, char c);
 int	ft_atoi_base(char *str, char *base);
 int	ft_convert_from_base(char *str, char *base);
 int	ft_check_base_error(char *str);
-
+char	*get_next_line(int fd);
+ssize_t	read_file(int fd, char **buffer, char **buff_read, char **line);
+char	*get_line(char **buff_read, char **line);
 #endif

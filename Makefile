@@ -33,7 +33,9 @@ SRC 		= $(SRCDIR)main.c \
 				$(SRCDIR)render.c \
 				$(SRCDIR)rotate.c \
 				$(SRCDIR)transform.c \
-				$(SRCDIR)utils.c
+				$(SRCDIR)utils.c \
+				$(SRCDIR)utils2.c \
+				$(SRCDIR)utils2.c 
 
 OBJ=$(notdir $(SRC:.c=.o))
 #OBJ= fdf.o
