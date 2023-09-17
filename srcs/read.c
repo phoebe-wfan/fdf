@@ -109,10 +109,9 @@ static void	get_points(char *file_name, t_map *map)
 		while (coord[0] < map->max_x)
 		{
 			fill_point(split[coord[0]], map, coord[0], coord[1]);
-			free(split[coord[0]]);
 			coord[0]++;
 		}
-		free(split);
+		ft_free_table(split);
 		free(line);
 		coord[1]++;
 	}

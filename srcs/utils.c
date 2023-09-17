@@ -50,12 +50,12 @@ size_t	ft_split_count(const char *s, char c)
 	counter = 0;
 	while (1)
 	{
-		if (s[i] == c || s[i] == '\0')
+		if (s[i] == c || s[i] == '\n')
 			next = i;
 		size = next - prev;
 		if (size > 1 || (size == 1 && s[i - 1] != c))
 			counter++;
-		if (s[i] == '\0')
+		if (s[i] == '\n' && s[i + 1] == '\0')
 			break ;
 		prev = next;
 		i++;

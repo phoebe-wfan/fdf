@@ -14,7 +14,7 @@ NAME 		= fdf
 MLX 		= libmlx_Linux.a
 LIBFT 		= libft.a
 
-LFT_PATH 	= ./libft/
+LFT_PATH 	= ./libft
 MLX_PATH 	= ./minilibx-linux/
 INCLUDES 	= ./includes
 SRCDIR 		= ./srcs/
@@ -45,14 +45,6 @@ CF 			= -Wall -Wextra -Werror
 CC 			= gcc
 MLX_CF 		= -lm -lbsd -lmlx -lXext -lX11
 CFI 		= -I$(INCLUDES) -Ilibft -Iminilibx-linux
-# LEAKS 		= valgrind
-# LEAKS_FILE	= valgrind-out.txt
-# LF 			= --leak-check=full \
-#         		--show-leak-kinds=all \
-#         		--track-origins=yes \
-#         		--verbose \
-#         		--log-file=$(LEAKS_FILE) \
-#         		./fdf maps/42.fdf
 
 #common commands
 RM =rm -f
@@ -62,9 +54,7 @@ all: $(NAME)
 
 $(NAME): $(OBJ) $(LIBFT) $(MLX)
 	@printf "\n$(CY)Generating FdF executable...$(RC)\n"
-	$(CC) $(CF) -o $(NAME) $(OBJ) -L $(LFT_PATH) -L $(MLX_PATH) -lft $(MLX_CF)
-	mkdir -p objs
-	mv $(OBJ) objs/
+	$(CC) $(CF) $(DEBUG) -o $(NAME) $(OBJ) -L $(LFT_PATH) -L $(MLX_PATH) -lft $(MLX_CF)
 	@printf "$(GR)Done!$(RC)\n\n"
 
 $(OBJ): $(SRC)

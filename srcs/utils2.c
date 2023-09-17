@@ -85,3 +85,16 @@ int	ft_check_base_error(char *str)
 	}
 	return (1);
 }
+
+void	ft_free_table(char **table)
+{
+	int		i;
+
+	i = 0;
+	while (table[i])
+	{
+		free(table[i]);
+		i++;
+	}
+	free(table);
+}
