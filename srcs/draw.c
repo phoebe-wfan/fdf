@@ -18,11 +18,11 @@ void	bresenham(t_fdf *fdf, t_point start, t_point end)
 	float	y_step;
 	int		max_steps;
 	int		i_line;
-	t_color *color;
+	t_color	*color;
 
 	x_step = end.x - start.x;
 	y_step = end.y - start.y;
-	max_steps = (int)max(absolute(x_step),absolute(y_step));
+	max_steps = (int)max(absolute(x_step), absolute(y_step));
 	x_step /= max_steps;
 	y_step /= max_steps;
 	color = color_init(start, end);
@@ -38,7 +38,7 @@ void	bresenham(t_fdf *fdf, t_point start, t_point end)
 		start.x += x_step;
 		start.y += y_step;
 	}
-	free(color); 
+	free(color);
 }
 
 void	pixel_to_image(t_image *image, float x, float y, int color)

@@ -12,9 +12,6 @@
 
 #include "fdf.h"
 
-int	ft_convert_from_base(char *str, char *base);
-int	ft_check_base_error(char *str);
-
 int	ft_atoi_base(char *str, char *base)
 {
 	int		sign;

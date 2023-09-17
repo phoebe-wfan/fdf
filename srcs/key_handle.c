@@ -14,7 +14,7 @@
 
 static void	key_translate(int keycode, t_fdf *fdf);
 static void	key_scale(int keycode, t_fdf *fdf);
-static void key_rotate(int keycode, t_fdf *fdf);
+static void	key_rotate(int keycode, t_fdf *fdf);
 static void	key_project(int keycode, t_fdf *fdf);
 
 int	key_handle(int keycode, t_fdf *fdf)

@@ -35,7 +35,7 @@ SRC 		= $(SRCDIR)main.c \
 				$(SRCDIR)transform.c \
 				$(SRCDIR)utils.c \
 				$(SRCDIR)utils2.c \
-				$(SRCDIR)utils2.c 
+				$(SRCDIR)utils3.c 
 
 OBJ=$(notdir $(SRC:.c=.o))
 #OBJ= fdf.o

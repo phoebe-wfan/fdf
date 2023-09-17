@@ -20,6 +20,9 @@
 # include <math.h>
 # include <fcntl.h>
 
+# define OPEN_MAX	1024
+# define BUFFER_SIZE	4096
+
 typedef struct s_point
 {
 	float	x;
@@ -160,10 +163,13 @@ void	translate(t_line *line, int move_x, int move_y);
 
 int		key_handle(int keycode, t_fdf *fdf);
 size_t	ft_split_count(const char *s, char c);
-int	ft_atoi_base(char *str, char *base);
-int	ft_convert_from_base(char *str, char *base);
-int	ft_check_base_error(char *str);
+
+int		ft_atoi_base(char *str, char *base);
+int		ft_convert_from_base(char *str, char *base);
+int		ft_check_base_error(char *str);
+
 char	*get_next_line(int fd);
 ssize_t	read_file(int fd, char **buffer, char **buff_read, char **line);
 char	*get_line(char **buff_read, char **line);
+
 #endif

@@ -48,13 +48,13 @@ static int	color_gradient(t_color *color, float progress)
 	return (color->start_color + r + g + b);
 }
 
-t_color *color_init(t_point start, t_point end)
+t_color	*color_init(t_point start, t_point end)
 {
-	t_color *color;
+	t_color	*color;
 
 	color = malloc(sizeof(t_color));
-	if(!color)
-		return(NULL);
+	if (!color)
+		return (NULL);
 	color->start_color = start.color;
 	color->start_r = (C_RED & start.color) >> 16;
 	color->start_g = (C_GREEN & start.color) >> 8;
@@ -69,13 +69,13 @@ t_color *color_init(t_point start, t_point end)
 	return (color);
 }
 
-t_color *color_pallet_init(int min_color, int max_color)
+t_color	*color_pallet_init(int min_color, int max_color)
 {
-	t_color *color;
+	t_color	*color;
 
 	color = malloc(sizeof(t_color));
 	if (!color)
-		return(NULL);
+		return (NULL);
 	color->start_color = min_color;
 	color->start_r = (C_RED & min_color) >> 16;
 	color->start_g = (C_GREEN & min_color) >> 8;

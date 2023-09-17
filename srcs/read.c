@@ -90,48 +90,23 @@ static int	get_depth(char *file_name)
 	return (depth);
 }
 
-// static void	get_points(char *file_name, t_map *map)
-// {
-// 	int		fd;
-// 	char	*line;
-// 	char	**split;
-// 	int		coord[2];
-
-// 	fd = open(file_name, O_RDONLY, 0);
-// 	coord[1] = 0;
-// 	while (1);
-// 	{
-// 		line = get_next_line(fd);
-// 		if (line == NULL)
-// 			break ;
-// 		split = ft_split(line, ' ');
-// 		coord[0] = 0;
-// 		while (coord[0] < map->max_x)
-// 		{
-// 			fill_point(split[coord[0]], map, coord[0], coord[1]);
-// 			free(split[coord[0]]);
-// 			coord[0]++;
-// 		}
-// 		free(split);
-// 		free(line);
-// 		coord[1]++;
-// 	}
-// 	close(fd);
-// }
 static void	get_points(char *file_name, t_map *map)
 {
 	int		fd;
 	char	*line;
 	char	**split;
 	int		coord[2];
-	
+
 	fd = open(file_name, O_RDONLY, 0);
 	coord[1] = 0;
-	while ((line = get_next_line(fd)) != NULL)
+	while (1)
 	{
+		line = get_next_line(fd);
+		if (line == NULL)
+			break ;
 		split = ft_split(line, ' ');
 		coord[0] = 0;
-		while (coord[0] < map->max_x) 
+		while (coord[0] < map->max_x)
 		{
 			fill_point(split[coord[0]], map, coord[0], coord[1]);
 			free(split[coord[0]]);

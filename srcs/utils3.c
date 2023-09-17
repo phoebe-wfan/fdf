@@ -12,9 +12,6 @@
 
 #include "fdf.h"
 
-ssize_t	read_file(int fd, char **buffer, char **buff_read, char **line);
-char	*get_line(char **buff_read, char **line);
-
 char	*get_next_line(int fd)
 {
 	static char		*buff_read[OPEN_MAX];

@@ -43,7 +43,7 @@ t_point	**init_coordinates(int width, int depth)
 
 void	center_to_origin(t_map *map)
 {
-	int x;
+	int	x;
 	int	y;
 
 	y = 0;
