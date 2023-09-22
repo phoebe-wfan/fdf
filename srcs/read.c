@@ -32,13 +32,10 @@ t_map	*read_map(char *file_name)
 	map->max_x = get_width(file_name);
 	map->max_y = get_depth(file_name);
 	if (map->max_x <= 0 || map->max_y <= 0)
-		error(9);
+		return (freemap(map));
 	map->coordinates = init_coordinates(map->max_x, map->max_y);
 	if (!map->coordinates)
-	{
-		free(map);
-		return (NULL);
-	}
+		return (freemap(map));
 	get_points(file_name, map);
 	center_to_origin(map);
 	return (map);
@@ -64,7 +61,7 @@ static int	get_width(char *file_name)
 			break ;
 		new_width = (int)ft_split_count(line, ' ');
 		if (width != new_width)
-			return (0);
+			return (freeline(line));
 		free(line);
 	}
 	close(fd);

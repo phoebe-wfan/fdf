@@ -35,7 +35,8 @@ SRC 		= $(SRCDIR)main.c \
 				$(SRCDIR)transform.c \
 				$(SRCDIR)utils.c \
 				$(SRCDIR)utils2.c \
-				$(SRCDIR)utils3.c 
+				$(SRCDIR)get_next_line_utils.c \
+				$(SRCDIR)get_next_line.c
 
 OBJ=$(notdir $(SRC:.c=.o))
 #OBJ= fdf.o
@@ -45,6 +46,7 @@ CF 			= -Wall -Wextra -Werror
 CC 			= gcc
 MLX_CF 		= -lm -lbsd -lmlx -lXext -lX11
 CFI 		= -I$(INCLUDES) -Ilibft -Iminilibx-linux
+# DEBUG		= -fsanitize=address -g
 
 #common commands
 RM =rm -f

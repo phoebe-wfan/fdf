@@ -12,6 +12,12 @@
 
 #include "fdf.h"
 
+int	freeline(char *line)
+{
+	free(line);
+	return (0);
+}
+
 int	ft_atoi_base(char *str, char *base)
 {
 	int		sign;

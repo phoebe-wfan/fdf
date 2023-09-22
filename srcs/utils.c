@@ -12,6 +12,12 @@
 
 #include "fdf.h"
 
+t_map	*freemap(t_map *map)
+{
+	free(map);
+	return (NULL);
+}
+
 float	absolute(float nbr)
 {
 	if (nbr < 0)
