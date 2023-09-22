@@ -32,5 +32,7 @@ void	error(int exit_code)
 		ft_putstr_fd("unable to render\n", 1);
 	else if (exit_code == 8)
 		ft_putstr_fd("unable to initialize color\n", 1);
+	else if (exit_code == 9)
+		ft_putstr_fd("map error\n", 1);
 	exit(exit_code);
 }

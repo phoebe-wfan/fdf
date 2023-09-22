@@ -31,6 +31,8 @@ t_map	*read_map(char *file_name)
 		return (NULL);
 	map->max_x = get_width(file_name);
 	map->max_y = get_depth(file_name);
+	if (map->max_x <= 0 || map->max_y <= 0)
+		error(9);
 	map->coordinates = init_coordinates(map->max_x, map->max_y);
 	if (!map->coordinates)
 	{
