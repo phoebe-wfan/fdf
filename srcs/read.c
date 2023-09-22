@@ -24,7 +24,7 @@ t_map	*read_map(char *file_name)
 
 	fd = open(file_name, O_RDONLY, 0);
 	if (fd < 0)
-		error(2);
+		return (NULL);
 	close(fd);
 	map = init_map();
 	if (!map)
