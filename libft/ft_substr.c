@@ -76,33 +76,28 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	return (ptr);
 }*/
 
-char	*ft_substr(const char *s, unsigned int start, size_t len)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char			*sub;
-	size_t			l;
-	unsigned int	i;
-	size_t			j;
+	size_t	i;
+	size_t	j;
+	char	*str;
 
-	if (!s)
-		return (NULL);
-	l = ft_strlen(s);
-	if (l < start)
-		return (ft_strdup("\0"));
-	if (l < len)
-		sub = (char *)ft_calloc(l + 1, sizeof(char));
-	else
-		sub = (char *)ft_calloc(len + 1, sizeof(char));
-	if (!sub)
+	str = (char *)malloc(sizeof(*s) * (len + 1));
+	if (!str)
 		return (NULL);
 	i = 0;
 	j = 0;
 	while (s[i])
 	{
-		if (start <= i && j < len)
-			sub[j++] = s[i];
+		if (i >= start && j < len)
+		{
+			str[j] = s[i];
+			j++;
+		}
 		i++;
 	}
-	return (sub);
+	str[j] = 0;
+	return (str);
 }
 /*
 #include <stdio.h>
